@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Đăng ký chuyên ngành";
+}
+
+<h1 style="color: red;">Đăng ký chuyên ngành</h1>
+
+<style>
+    form div {
+        margin-bottom: 15px; /* Tăng khoảng cách giữa các ô */
+    }
+
+    label {
+        display: inline-block;
+        width: 150px; /* Căn chỉnh nhãn */
+    }
+</style>
+
+
+<form asp-action="ShowKQ" method="post">
+    <div>
+        <label for="MSSV">MSSV:</label>
+        <input type="text" id="MSSV" name="MSSV" required />
+    </div>
+    <div>
+        <label for="HoTen">Họ tên:</label>
+        <input type="text" id="HoTen" name="HoTen" required />
+    </div>
+    <div>
+        <label for="DiemTB">Điểm trung bình:</label>
+        <input type="number" step="0.01" id="DiemTB" name="DiemTB" required />
+    </div>
+    <div>
+        <label for="ChuyenNganh">Chuyên ngành:</label>
+        <select id="ChuyenNganh" name="ChuyenNganh" required>
+            <option value="CNPM">Công Nghệ Phần Mềm</option>
+            <option value="HTTT">Hệ Thống Thông Tin</option>
+            <option value="ANM">An Ninh Mạng</option>
+            <option value="TTNT">Trí Tuệ Nhân Tạo</option>
+            <option value="MMT">Mạng Máy Tính</option>
+        </select>
+    </div>
+    <button type="submit">Đăng ký</button>
+</form>
